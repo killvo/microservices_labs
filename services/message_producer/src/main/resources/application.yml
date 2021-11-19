@@ -1,0 +1,13 @@
+server:
+  port: 5000
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+    url: jdbc:postgresql://localhost:5432/shared_warehouse
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.example.message_producer.domains.message.utils.MessageSerializer
+      bootstrap-servers: localhost:29092, localhost:39092
